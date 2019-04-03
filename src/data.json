@@ -1,0 +1,64 @@
+{
+    "contact": [
+        {
+            "url": "mailto:chauncey@mcaskill.ca?subject=Hi+Chauncey!",
+            "text": "Email",
+            "icon": "📧"
+        },
+        {
+            "url": "https://github.com/mcaskill",
+            "text": "GitHub",
+            "icon": "🐙"
+        },
+        {
+            "url": "https://twitter.com/mcaskill",
+            "text": "Twitter",
+            "icon": "🐦"
+        },
+        {
+            "url": "https://letterboxd.com/mcaskill",
+            "text": "Letterboxd",
+            "icon": "🎬"
+        }
+    ],
+    "work": [
+        {
+            "name": "Locomotive",
+            "period": "2013-12/..",
+            "roles": [
+                "Senior Backend Developer"
+            ],
+            "url": {
+                "@en": "https://locomotive.ca/en",
+                "@fr": "https://locomotive.ca/fr"
+            },
+            "projects": [
+            ]
+        },
+        {
+            "name": "Motion in Design",
+            "period": "2012-05/2013-11",
+            "roles": [
+                "Backend Developer",
+                "Frontend Developer"
+            ],
+            "url": {
+                "@fr": "http://motionindesign.com/"
+            },
+            "projects": [
+            ]
+        },
+        {
+            "name": "Freelance",
+            "period": "2008-01/2012-04",
+            "roles": [
+                "Designer",
+                "Backend Developer",
+                "Frontend Developer"
+            ],
+            "url": null,
+            "projects": [
+            ]
+        }
+    ]
+}
