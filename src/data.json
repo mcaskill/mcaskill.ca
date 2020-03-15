@@ -33,6 +33,422 @@
                 "@fr": "https://locomotive.ca/fr"
             },
             "projects": [
+                {
+                    "name": "Charcoal Web Framework",
+                    "description": "An open-source CMS/CMF framework for PHP.",
+                    "period": "2016/..",
+                    "status": "ACTIVE",
+                    "stack": [
+                        "PHP",
+                        "MySQL",
+                        "Apache"
+                    ],
+                    "client": "Locomotive Inc.",
+                    "roles": [
+                        "Senior Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Open Source",
+                            "Web Framework"
+                        ],
+                        "subjects": [
+                            "Technology",
+                            "Web Development"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://charcoal.locomotive.ca/en",
+                                "@fr": "https://charcoal.locomotive.ca/fr"
+                            },
+                            "text": "Charcoal PHP"
+                        },
+                        {
+                            "url": "https://github.com/locomotivemtl?q=charcoal",
+                            "text": "github.com"
+                        },
+                        {
+                            "url": "https://packagist.org/packages/locomotivemtl/",
+                            "text": "packagist.org"
+                        }
+                    ],
+                    "icon": "🔥"
+                },
+                {
+                    "name": {
+                        "@en": "Maple From Quebec",
+                        "@fr": "Érable du Québec"
+                    },
+                    "description": "A marketing campaign to promote maple products.",
+                    "period": "2018/2019",
+                    "status": "ACTIVE",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": {
+                        "@en": "Quebec Maple Syrup Producers",
+                        "@fr": "Producteurs et productrices acéricoles du Québec"
+                    },
+                    "roles": [
+                        "Lead Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Promotional",
+                            "Recipes"
+                        ],
+                        "subjects": [
+                            "Food & Drink"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://maplefromquebec.ca/",
+                                "@fr": "https://erableduquebec.ca/"
+                            },
+                            "text": {
+                                "@en": "maplefromquebec.ca",
+                                "@fr": "erableduquebec.ca"
+                            }
+                        }
+                    ],
+                    "icon": "🍁"
+                },
+                {
+                    "name": "Orenda Security",
+                    "description": "An international cyber security firm founded by a skilled group of professionals.",
+                    "period": "2017/2018",
+                    "status": "REPLACED",
+                    "stack": [
+                        "Charcoal"
+                    ],
+                    "client": "Orenda Security",
+                    "roles": [
+                        "Lead Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Corporate Site",
+                            "Consultancy"
+                        ],
+                        "subjects": [
+                            "Security",
+                            "Technology"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://orendasecurity.com/"
+                            },
+                            "text": "orendasecurity.com"
+                        },
+                        {
+                            "url": "https://web.archive.org/web/20180825102620/https://orendasecurity.com/",
+                            "text": "Snapshot"
+                        }
+                    ],
+                    "icon": "👮‍♂️"
+                },
+                {
+                    "name": "Infini Inc.",
+                    "description": "A family business specializing in premium quality stone.",
+                    "period": "2018-01/2018-09",
+                    "status": "ACTIVE",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": "Divyashakti Granites Ltd.",
+                    "roles": [
+                        "Lead Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Product Catalogue"
+                        ],
+                        "subjects": [
+                            "Building & Construction",
+                            "Interior Design"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://infiniinc.com/"
+                            },
+                            "text": "infiniinc.com"
+                        }
+                    ],
+                    "icon": "🏠"
+                },
+                {
+                    "name": "Monolith Productions",
+                    "description": "An American video game developer based in Kirkland, Washington.",
+                    "period": "2016-11/2017-09",
+                    "status": "REPLACED",
+                    "stack": [
+                        "Charcoal"
+                    ],
+                    "client": "Monolith Productions",
+                    "roles": [
+                        "Lead Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Video Game Developer"
+                        ],
+                        "subjects": [
+                            "Games"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://www.lith.com/"
+                            },
+                            "text": "lith.com"
+                        },
+                        {
+                            "url": "https://web.archive.org/web/20171013225022/https://www.lith.com/",
+                            "text": "Snapshot"
+                        }
+                    ],
+                    "icon": "🎮"
+                },
+                {
+                    "name": {
+                        "@fr": "Collège Mont-Saint-Louis"
+                    },
+                    "description": "A private secondary school based in Montréal, Québec.",
+                    "period": "2017-07",
+                    "status": "ACTIVE",
+                    "stack": [
+                        "Charcoal"
+                    ],
+                    "client": {
+                        "@fr": "Collège Mont-Saint-Louis"
+                    },
+                    "roles": [
+                        "Lead Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Educational Institution"
+                        ],
+                        "subjects": [
+                            "Education"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@fr": "https://www.msl.qc.ca/"
+                            },
+                            "text": "msl.qc.ca"
+                        }
+                    ],
+                    "icon": "🎓"
+                },
+                {
+                    "name": "Kvell",
+                    "description": "A Canadian brand of Scandinavian-inspired furniture.",
+                    "period": "2017-03",
+                    "status": "ACTIVE",
+                    "stack": [
+                        "Charcoal"
+                    ],
+                    "client": "The FHE Group Inc.",
+                    "roles": [
+                        "Lead Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Product Catalogue",
+                            "Shop"
+                        ],
+                        "subjects": [
+                            "Furniture"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://kvellhome.com/"
+                            },
+                            "text": "kvellhome.com"
+                        },
+                        {
+                            "url": "https://locomotive.ca/en/projects/kvell",
+                            "text": "Case Study"
+                        }
+                    ],
+                    "icon": "🛋"
+                },
+                {
+                    "name": "U Sports Canada",
+                    "description": "The national governing body for university sports.",
+                    "period": "2016/2019",
+                    "status": "ACTIVE",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": "U Sports Canada",
+                    "roles": [
+                        "Lead Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Community",
+                            "Events"
+                        ],
+                        "subjects": [
+                            "Sports",
+                            "News"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://usports.ca/en",
+                                "@fr": "https://usports.ca/fr"
+                            },
+                            "text": "usports.ca"
+                        }
+                    ],
+                    "icon": "🤾"
+                },
+                {
+                    "name": {
+                        "@en": "Swimming Canada",
+                        "@fr": "Natation Canada"
+                    },
+                    "description": "The national governing body for competitive swimming.",
+                    "period": "2015/2019",
+                    "status": "ACTIVE",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": {
+                        "@en": "Swimming Canada",
+                        "@fr": "Natation Canada"
+                    },
+                    "roles": [
+                        "Lead Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Community",
+                            "Events"
+                        ],
+                        "subjects": [
+                            "Sports",
+                            "News"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://swimming.ca/",
+                                "@fr": "https://natation.ca/"
+                            },
+                            "text": {
+                                "@en": "swimming.ca",
+                                "@fr": "natation.ca"
+                            }
+                        },
+                        {
+                            "url": "https://locomotive.ca/en/projects/swimming-canada",
+                            "text": "Case Study"
+                        }
+                    ],
+                    "icon": "🏊"
+                },
+                {
+                    "name": {
+                        "@fr": "Union des Producteurs Agricoles"
+                    },
+                    "description": "An agricultural trade union representing producers in the province Québec.",
+                    "period": "2014/2015",
+                    "status": "ACTIVE",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": {
+                        "@fr": "Union des Producteurs Agricoles"
+                    },
+                    "roles": [
+                        "Lead Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Trade Union"
+                        ],
+                        "subjects": [
+                            "Agriculture"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://www.upa.qc.ca/en/",
+                                "@fr": "https://www.upa.qc.ca/fr/"
+                            },
+                            "text": "upa.qc.ca"
+                        },
+                        {
+                            "url": "https://locomotive.ca/en/projects/upa",
+                            "text": "Case Study"
+                        }
+                    ],
+                    "icon": "🌾"
+                },
+                {
+                    "name": {
+                        "@en": "Harwell Packaging Inc.",
+                        "@fr": "Emballage Harwell Inc."
+                    },
+                    "description": "A family business specializing in custom packaging based in Dollard-des-Ormeaux, Québec.",
+                    "period": "2014",
+                    "status": "ACTIVE",
+                    "stack": [
+                        "Charcoal (Legacy)"
+                    ],
+                    "client": {
+                        "@en": "Harwell Packaging Inc.",
+                        "@fr": "Emballage Harwell Inc."
+                    },
+                    "roles": [
+                        "Frontend Developer",
+                        "Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Corporate Site",
+                            "Product Catalogue"
+                        ],
+                        "subjects": [
+                            "Industry",
+                            "Product Design"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "http://harwell.ca/en",
+                                "@fr": "http://harwell.ca/fr"
+                            },
+                            "text": "harwell.ca"
+                        },
+                        {
+                            "url": "https://web.archive.org/web/20170730160542/https://locomotive.ca/en/projects/harwell",
+                            "text": "Case Study"
+                        }
+                    ],
+                    "icon": "📦"
+                }
             ]
         },
         {
@@ -46,6 +462,128 @@
                 "@fr": "http://motionindesign.com/"
             },
             "projects": [
+                {
+                    "name": "Remstar Films",
+                    "description": "A film and television production and distribution comapny based in Montreal, Québec.",
+                    "period": "2013",
+                    "status": "REPLACED",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": "Remcorp",
+                    "roles": [
+                        "Frontend Developer",
+                        "Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Corporate Site"
+                        ],
+                        "subjects": [
+                            "Movies",
+                            "Television"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://remstarfilms.com/en",
+                                "@fr": "https://remstarfilms.com/fr"
+                            },
+                            "text": "remstarfilms.com"
+                        },
+                        {
+                            "url": "https://web.archive.org/web/20131126215350/http://remstarfilms.com/en/",
+                            "text": "Snapshot"
+                        },
+                        {
+                            "url": {
+                                "@fr": "http://www.motionindesign.com/project/remstar-films/"
+                            },
+                            "text": "Case Study"
+                        }
+                    ],
+                    "icon": "🎬"
+                },
+                {
+                    "name": {
+                        "@en": "Thomas Marine Group",
+                        "@fr": "Groupe Thomas Marine"
+                    },
+                    "description": "A family-owned dealership specializing in boats based in Varennes, Québec.",
+                    "period": "2012/2013",
+                    "status": "REPLACED",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": {
+                        "@en": "Thomas Marine Group",
+                        "@fr": "Groupe Thomas Marine"
+                    },
+                    "roles": [
+                        "Frontend Developer",
+                        "Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Product Catalogue"
+                        ],
+                        "subjects": [
+                            "Consumer",
+                            "Boating"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://www.groupethomasmarine.com/en",
+                                "@fr": "https://www.groupethomasmarine.com/fr"
+                            },
+                            "text": "groupethomasmarine.com"
+                        },
+                        {
+                            "url": "https://web.archive.org/web/20130307010130/http://groupethomasmarine.com/",
+                            "text": "Snapshot"
+                        },
+                        {
+                            "url": {
+                                "@fr": "http://www.motionindesign.com/project/le-groupe-thomas-marine/"
+                            },
+                            "text": "Case Study"
+                        }
+                    ],
+                    "icon": "🚤"
+                },
+                {
+                    "name": "SYNERGX Technologies",
+                    "description": "A global supplier of automated optical inspection technologies based in Laval, Québec.",
+                    "period": "2012/2013",
+                    "status": "ACTIVE",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": "SYNERGX Technologies Inc.",
+                    "roles": [
+                        "Frontend Developer",
+                        "Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Product Catalogue"
+                        ],
+                        "subjects": [
+                            "Industry",
+                            "Technology"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": "http://www.synergx.ca/",
+                            "text": "synergx.ca"
+                        }
+                    ],
+                    "icon": "⚙️"
+                }
             ]
         },
         {

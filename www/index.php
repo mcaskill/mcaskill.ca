@@ -2,6 +2,10 @@
 
 define('BASEPATH', dirname(__DIR__));
 
+define('MC_PROJECT_STATUS_ACTIVE',  'ACTIVE');
+define('MC_PROJECT_STATUS_RELACED', 'RELACED');
+define('MC_PROJECT_STATUS_DEAD',    'DEAD');
+
 require BASEPATH . '/src/app.php';
 
 $file = BASEPATH . '/src/data.json';
@@ -36,7 +40,7 @@ $workRanges = [];
                 line-height: 1.5;
             }
             body > header {
-                min-height: calc(100vh - 5.5em);
+                min-height: calc(100vh - 7.5em);
             }
             body > header > h1 {
                 font-size: 1.5em;
@@ -146,13 +150,42 @@ $workRanges = [];
 <?php
 
                 foreach ($epoch->projects as $project) {
-                    $project->name = Value::create($project->name);
-                    $project->url  = Value::create($project->url);
+                    $project->name = Value::create($project->name ?? null);
+                    $project->url  = Value::create(array_shift($project->links)->url ?? null);
+
+                    $isProjectActive = ($project->status === MC_PROJECT_STATUS_ACTIVE);
 
 ?>
                 <li>
                     <p>
-                        <?php echo HTML::icon($project->icon); ?><strong><?php echo HTML::anchor($project->url, $project->name); ?></strong> —
+                        <?php echo HTML::icon($project->icon); ?><strong><?php
+
+                            if (!$isProjectActive) {
+                                echo '<del>';
+                            }
+
+                            if ($project->status !== MC_PROJECT_STATUS_DEAD) {
+                                echo HTML::anchor($project->url, $project->name);
+                            } else {
+                                echo $project->name;
+                            }
+
+                            if (!$isProjectActive) {
+                                echo '</del>';
+                            }
+
+                        ?></strong><?php
+
+                            if (!$isProjectActive && count($project->links)) {
+                                $projectLinks = array_map(function ($link) {
+                                    $link->url = Value::create($link->url ?? null);
+                                    return '[' . HTML::anchor($link->url, $link->text) . ']';
+                                }, $project->links);
+
+                                echo ' ' . '<small>' . implode(' ', $projectLinks) . '</small>';
+                            }
+
+                        ?> —
                         <br><?php echo $project->description . "\n"; ?>
                         <br><small><?php echo implode(', ', $project->roles); ?> (<?php echo HTML::time($project->period); ?>)</small>
                     </p>
