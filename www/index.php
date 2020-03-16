@@ -18,14 +18,21 @@ if ($data === null) {
 
 $icons = [ '🌀', '🧠', '☕️', '⚙️', '🛠', '🧰', '🎒', '⌨️', '🖥', '💻', '🌎', '🌑', '🇨🇦', ];
 
+$linkFormatterCallback = function ($link) {
+    $link->url = Value::create($link->url ?? null);
+    return HTML::anchor($link->url, $link->text);
+};
+
 $workRanges = [];
 
 ?><!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Chauncey McAskill</title>
         <meta content="width=device-width,initial-scale=1" name="viewport">
+
+        <title>Chauncey McAskill</title>
+        <meta name="description" content="Web developer working at Locomotive.">
 
         <style>
             body {
@@ -40,7 +47,8 @@ $workRanges = [];
                 line-height: 1.5;
             }
             body > header {
-                min-height: calc(100vh - 7.5em);
+                min-height: calc(100vh - 10em);
+                margin-bottom: 3.5em;
             }
             body > header > h1 {
                 font-size: 1.5em;
@@ -52,10 +60,10 @@ $workRanges = [];
                 text-align: center;
                 vertical-align: middle;
             }
-            body > header > p:nth-child(4) {
+            body > header > p:nth-last-child(2) {
                 opacity: 0.6;
             }
-            body > header > p:nth-child(5) {
+            body > header > p:nth-last-child(1) {
                 opacity: 0.4;
             }
             h1, h2, h3, h4, h5, h6, strong {
@@ -69,6 +77,19 @@ $workRanges = [];
             }
             h5, h6 {
                 font-size: 1em;
+            }
+            hr {
+                max-width: 2rem;
+                margin-top: 2em;
+                margin-right: 0;
+                margin-bottom: 2em;
+                margin-left: 0;
+                border-style: solid;
+                border-top-width: 1px;
+                border-right-width: 0;
+                border-bottom-width: 0;
+                border-left-width: 0;
+                opacity: 0.6;
             }
             ul {
                 padding-left: 0;
@@ -104,6 +125,24 @@ $workRanges = [];
         <header>
             <h1><?php echo HTML::icon($icons[mt_rand(0, (count($icons) - 1))]); ?>Chauncey McAskill</h1>
             <p>Web Developer<br>Montréal, QC</p>
+
+            <p><small><strong>Contact</strong><br><?php
+
+                $contactLinks = array_map($linkFormatterCallback, $data->contact);
+
+                echo implode(' / ', $contactLinks);
+
+            ?></small></p>
+
+            <p><small><strong>Online</strong><br><?php
+
+                $onlineLinks = array_map($linkFormatterCallback, $data->social);
+
+                echo implode(' / ', $onlineLinks);
+
+            ?></small></p>
+
+            <hr />
 <?php
 
             foreach ($data->work as $epoch) {
@@ -135,7 +174,7 @@ $workRanges = [];
 ?>
 
         <section>
-            <h1>Work<br><?php echo HTML::time($workSpan, $workSpan->format('Y', 'Y')); ?></h1>
+            <h1>Selected Work<br><?php echo HTML::time($workSpan, $workSpan->format('Y', 'Y')); ?></h1>
 <?php
 
             foreach ($data->work as $epoch) {
@@ -207,22 +246,5 @@ $workRanges = [];
         } // $workRanges
 
 ?>
-
-        <section>
-            <h1>Contact</h1>
-            <ul>
-<?php
-
-            foreach ($data->contact as $link) {
-
-?>
-                <li><?php echo HTML::icon($link->icon); ?><?php echo HTML::anchor($link->url, $link->text); ?></li>
-<?php
-
-            } // $contact
-
-?>
-            </ul>
-        </section>
     </body>
 </html>

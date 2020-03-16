@@ -2,13 +2,25 @@
     "contact": [
         {
             "url": "mailto:chauncey@mcaskill.ca?subject=Hi+Chauncey!",
-            "text": "Email",
+            "text": "chauncey@mcaskill.ca",
             "icon": "📧"
-        },
+        }
+    ],
+    "social": [
         {
             "url": "https://github.com/mcaskill",
             "text": "GitHub",
             "icon": "🐙"
+        },
+        {
+            "url": "https://packagist.org/packages/mcaskill/",
+            "text": "Packagist",
+            "icon": "🐘"
+        },
+        {
+            "url": "https://letterboxd.com/mcaskill",
+            "text": "Letterboxd",
+            "icon": "🎬"
         },
         {
             "url": "https://twitter.com/mcaskill",
@@ -16,9 +28,9 @@
             "icon": "🐦"
         },
         {
-            "url": "https://letterboxd.com/mcaskill",
-            "text": "Letterboxd",
-            "icon": "🎬"
+            "url": "https://keybase.io/mcaskill",
+            "text": "Keybase",
+            "icon": "🔑"
         }
     ],
     "work": [
