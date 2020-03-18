@@ -35,8 +35,22 @@
     ],
     "work": [
         {
+            "name": "Personal",
+            "period": "2008-01/..",
+            "type": "AVOCATION",
+            "roles": [
+                "Designer",
+                "Backend Developer",
+                "Frontend Developer"
+            ],
+            "url": null,
+            "projects": [
+            ]
+        },
+        {
             "name": "Locomotive",
             "period": "2013-12/..",
+            "type": "OCCUPATION",
             "roles": [
                 "Senior Backend Developer"
             ],
@@ -466,6 +480,7 @@
         {
             "name": "Motion in Design",
             "period": "2012-05/2013-11",
+            "type": "OCCUPATION",
             "roles": [
                 "Backend Developer",
                 "Frontend Developer"
@@ -601,6 +616,7 @@
         {
             "name": "Freelance",
             "period": "2008-01/2012-04",
+            "type": "OCCUPATION",
             "roles": [
                 "Designer",
                 "Backend Developer",
@@ -608,6 +624,85 @@
             ],
             "url": null,
             "projects": [
+            ]
+        },
+        {
+            "name": "Patrick Loranger",
+            "period": "2005/..",
+            "type": "AVOCATION",
+            "roles": [
+                "Designer",
+                "Backend Developer",
+                "Frontend Developer"
+            ],
+            "url": null,
+            "projects": [
+                {
+                    "name": {
+                        "@fr": "L'Ordre des Ornyx"
+                    },
+                    "description": "The official website for the series of fantasy novels.",
+                    "period": "2010/..",
+                    "status": "ACTIVE",
+                    "stack": [
+                    ],
+                    "client": "Patrick Loranger",
+                    "roles": [
+                        "Designer",
+                        "Frontend Developer",
+                        "Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Promotional",
+                            "Project"
+                        ],
+                        "subjects": [
+                            "Books & Literature"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@fr": "http://ornyx.ca"
+                            },
+                            "text": "ornyx.ca"
+                        }
+                    ],
+                    "icon": "🎇"
+                },
+                {
+                    "name": "Technotron",
+                    "description": "The official website for the series of science-fiction novels and tabletop role-playing game.",
+                    "period": "2006/..",
+                    "status": "ACTIVE",
+                    "stack": [
+                    ],
+                    "client": "Patrick Loranger",
+                    "roles": [
+                        "Frontend Developer",
+                        "Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Promotional",
+                            "Project"
+                        ],
+                        "subjects": [
+                            "Books & Literature",
+                            "Games"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@fr": "http://rpgtechnotron.ca"
+                            },
+                            "text": "rpgtechnotron.ca"
+                        }
+                    ],
+                    "icon": "🌌"
+                }
             ]
         }
     ]

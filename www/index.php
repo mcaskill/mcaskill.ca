@@ -2,6 +2,9 @@
 
 define('BASEPATH', dirname(__DIR__));
 
+define('MC_WORK_TYPE_AVOCATION',  'AVOCATION');
+define('MC_WORK_TYPE_OCCUPATION', 'OCCUPATION');
+
 define('MC_PROJECT_STATUS_ACTIVE',  'ACTIVE');
 define('MC_PROJECT_STATUS_RELACED', 'RELACED');
 define('MC_PROJECT_STATUS_DEAD',    'DEAD');
@@ -146,12 +149,16 @@ $workRanges = [];
 <?php
 
             foreach ($data->work as $epoch) {
-                $epoch->name = Value::create($epoch->name);
-                $epoch->url  = Value::create($epoch->url);
-
                 if (!empty($epoch->projects)) {
                     $workRanges[] = $epoch->period;
                 }
+
+                if ($epoch->type === MC_WORK_TYPE_AVOCATION) {
+                    continue;
+                }
+
+                $epoch->name = Value::create($epoch->name);
+                $epoch->url  = Value::create($epoch->url);
 
 ?>
             <p>
