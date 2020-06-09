@@ -39,34 +39,38 @@ $workRanges = [];
 
         <style>
             body {
-                max-width: 45rem;
                 margin-top: 1.5em;
-                margin-right: 1.5em;
+                margin-right: 0;
                 margin-bottom: 6em;
-                margin-left: 3em;
+                margin-left: 0;
                 color: #2C3235;
                 font-family: sans-serif;
                 font-weight: 300;
                 line-height: 1.5;
             }
+            div {
+                max-width: 45rem;
+                margin-right: 1.5em;
+                margin-left: 3em;
+            }
             body > header {
                 min-height: calc(100vh - 10em);
                 margin-bottom: 3.5em;
             }
-            body > header > h1 {
+            body > header h1 {
                 font-size: 1.5em;
             }
-            body > header > h1 [role="img"] {
+            body > header h1 [role="img"] {
                 display: inline-block;
                 margin-left: -2em;
                 width: 2em;
                 text-align: center;
                 vertical-align: middle;
             }
-            body > header > p:nth-last-child(2) {
+            body > header p:nth-last-child(2) {
                 opacity: 0.6;
             }
-            body > header > p:nth-last-child(1) {
+            body > header p:nth-last-child(1) {
                 opacity: 0.4;
             }
             h1, h2, h3, h4, h5, h6, strong {
@@ -128,26 +132,28 @@ $workRanges = [];
     </head>
     <body>
         <header>
-            <h1><?php echo HTML::icon($icon); ?>Chauncey McAskill</h1>
-            <p>Web Developer<br>Montréal, QC</p>
+            <div>
 
-            <p><small><strong>Contact</strong><br><?php
+                <h1><?php echo HTML::icon($icon); ?>Chauncey McAskill</h1>
+                <p>Web Developer<br>Montréal, QC</p>
 
-                $contactLinks = array_map($linkFormatterCallback, $data->contact);
+                <p><small><strong>Contact</strong><br><?php
 
-                echo implode(' / ', $contactLinks);
+                    $contactLinks = array_map($linkFormatterCallback, $data->contact);
 
-            ?></small></p>
+                    echo implode(' / ', $contactLinks);
 
-            <p><small><strong>Online</strong><br><?php
+                ?></small></p>
 
-                $onlineLinks = array_map($linkFormatterCallback, $data->social);
+                <p><small><strong>Online</strong><br><?php
 
-                echo implode(' / ', $onlineLinks);
+                    $onlineLinks = array_map($linkFormatterCallback, $data->social);
 
-            ?></small></p>
+                    echo implode(' / ', $onlineLinks);
 
-            <hr />
+                ?></small></p>
+
+                <hr />
 <?php
 
             foreach ($data->work as $epoch) {
@@ -163,16 +169,17 @@ $workRanges = [];
                 $epoch->url  = Value::create($epoch->url);
 
 ?>
-            <p>
-                <strong><?php echo HTML::anchor($epoch->url, $epoch->name); ?></strong>
-                <br><?php echo HTML::time($epoch->period) . "\n"; ?>
-                <br><small><?php echo implode(', ', $epoch->roles); ?></small>
-            </p>
+                <p>
+                    <strong><?php echo HTML::anchor($epoch->url, $epoch->name); ?></strong>
+                    <br><?php echo HTML::time($epoch->period) . "\n"; ?>
+                    <br><small><?php echo implode(', ', $epoch->roles); ?></small>
+                </p>
 <?php
 
             } // $work
 
 ?>
+            </div>
         </header>
 <?php
 
@@ -183,7 +190,8 @@ $workRanges = [];
 ?>
 
         <section>
-            <h1>Selected Work<br><?php echo HTML::time($workSpan, $workSpan->format('Y', 'Y')); ?></h1>
+            <div>
+                <h2>Selected Work<br><?php echo HTML::time($workSpan, $workSpan->format('Y', 'Y')); ?></h2>
 <?php
 
             foreach ($data->work as $epoch) {
@@ -193,8 +201,8 @@ $workRanges = [];
 
 ?>
 
-            <h3><?php echo $epoch->name; ?></h3>
-            <ul>
+                <h3><?php echo $epoch->name; ?></h3>
+                <ul>
 <?php
 
                 foreach ($epoch->projects as $project) {
@@ -204,51 +212,52 @@ $workRanges = [];
                     $isProjectActive = ($project->status === MC_PROJECT_STATUS_ACTIVE);
 
 ?>
-                <li>
-                    <p>
-                        <?php echo HTML::icon($project->icon); ?><strong><?php
+                    <li>
+                        <p>
+                            <?php echo HTML::icon($project->icon); ?><strong><?php
 
-                            if (!$isProjectActive) {
-                                echo '<del>';
-                            }
+                                if (!$isProjectActive) {
+                                    echo '<del>';
+                                }
 
-                            if ($project->status !== MC_PROJECT_STATUS_DEAD) {
-                                echo HTML::anchor($project->url, $project->name);
-                            } else {
-                                echo $project->name;
-                            }
+                                if ($project->status !== MC_PROJECT_STATUS_DEAD) {
+                                    echo HTML::anchor($project->url, $project->name);
+                                } else {
+                                    echo $project->name;
+                                }
 
-                            if (!$isProjectActive) {
-                                echo '</del>';
-                            }
+                                if (!$isProjectActive) {
+                                    echo '</del>';
+                                }
 
-                        ?></strong><?php
+                            ?></strong><?php
 
-                            if (!$isProjectActive && count($project->links)) {
-                                $projectLinks = array_map(function ($link) {
-                                    $link->url = Value::create($link->url ?? null);
-                                    return '[' . HTML::anchor($link->url, $link->text) . ']';
-                                }, $project->links);
+                                if (!$isProjectActive && count($project->links)) {
+                                    $projectLinks = array_map(function ($link) {
+                                        $link->url = Value::create($link->url ?? null);
+                                        return '[' . HTML::anchor($link->url, $link->text) . ']';
+                                    }, $project->links);
 
-                                echo ' ' . '<small>' . implode(' ', $projectLinks) . '</small>';
-                            }
+                                    echo ' ' . '<small>' . implode(' ', $projectLinks) . '</small>';
+                                }
 
-                        ?> —
-                        <br><?php echo $project->description . "\n"; ?>
-                        <br><small><?php echo implode(', ', $project->roles); ?> (<?php echo HTML::time($project->period); ?>)</small>
-                    </p>
-                </li>
+                            ?> —
+                            <br><?php echo $project->description . "\n"; ?>
+                            <br><small><?php echo implode(', ', $project->roles); ?> (<?php echo HTML::time($project->period); ?>)</small>
+                        </p>
+                    </li>
 <?php
 
                 } // $projects
 
 ?>
-            </ul>
+                </ul>
 <?php
 
             } // $work
 
 ?>
+            </div>
         </section>
 <?php
 
