@@ -44,7 +44,7 @@ $workRanges = [];
                 margin-bottom: 6em;
                 margin-left: 0;
                 color: #2C3235;
-                font-family: sans-serif;
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
                 font-weight: 300;
                 line-height: 1.5;
             }
@@ -84,6 +84,12 @@ $workRanges = [];
             }
             h5, h6 {
                 font-size: 1em;
+            }
+            h3 {
+                margin-top: 2em;
+                padding-bottom: 0.5em;
+                border-bottom: 1px solid rgba(22, 33, 33, 0.2);
+                border-image: linear-gradient(to right, rgba(22, 33, 33, 0.2) 50%, rgba(22, 33, 33, 0)) 100% 1;
             }
             hr {
                 max-width: 2rem;
