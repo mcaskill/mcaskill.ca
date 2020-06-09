@@ -19,7 +19,7 @@ if ($data === null) {
     throw new Error('JSON: '.json_last_error_msg(), json_last_error());
 }
 
-$icons = [ '🌀', '🧠', '☕️', '⚙️', '🛠', '🧰', '🎒', '⌨️', '🖥', '💻', '🌎', '🌑', '🇨🇦', ];
+$icon = require BASEPATH . '/src/icon.php';
 
 $linkFormatterCallback = function ($link) {
     $link->url = Value::create($link->url ?? null);
@@ -123,10 +123,12 @@ $workRanges = [];
                 a { color: #FF0; }
             }
         </style>
+
+        <link rel="icon" type="image/svg+xml" href="favicon.php" />
     </head>
     <body>
         <header>
-            <h1><?php echo HTML::icon($icons[mt_rand(0, (count($icons) - 1))]); ?>Chauncey McAskill</h1>
+            <h1><?php echo HTML::icon($icon); ?>Chauncey McAskill</h1>
             <p>Web Developer<br>Montréal, QC</p>
 
             <p><small><strong>Contact</strong><br><?php
