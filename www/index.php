@@ -129,7 +129,12 @@ $workRanges = [];
             table {
                 border-color: #DFDFDE;
             }
-            a { color: #00F; }
+            a {
+                color: #00F;
+            }
+            a:visited {
+                color: #008;
+            }
             /*
             ul { padding-left: 0; }
             li { list-style: none; margin-left: 1em }
@@ -140,6 +145,7 @@ $workRanges = [];
                     color: #E2E6E8;
                 }
                 a { color: #FF0; }
+                a:visited { color: #990; }
             }
         </style>
 
