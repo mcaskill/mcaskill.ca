@@ -429,31 +429,56 @@ class HTML
             return $text;
         }
 
+        $uri = parse_url($href);
+        $uri['host'] = $uri['host'] ?? null;
+        $uri['path'] = $uri['path'] ?? null;
+
+        $rel = null;
+        if ($uri['host'] !== getenv('SERVER_NAME')) {
+            $rel = 'noreferrer noopener';
+        }
+
         if ($text === null) {
-            $host = parse_url($href, PHP_URL_HOST);
-            $text = $href;
-        } else {
-            $host = null;
+            $text = $uri['host'] ?? $uri['path'] ?? null;
         }
 
         $attr = [
             'href'     => $href,
             'hreflang' => static::locale($href),
             'target'   => null,
-            'rel'      => 'noreferrer noopener',
+            'rel'      => $rel,
             'lang'     => static::locale($text),
         ];
 
-        if ($host !== null) {
-            $text = $host;
+        return static::element('a', $attr, $text);
+    }
+
+    /**
+     * Render an HTML element.
+     *
+     * @param  string $tag  The HTML tag name of the element.
+     * @param  array  $attr The HTML attributes of the element.
+     * @param  mixed  $text The text node of the element.
+     *     Pass FALSE to render a self-closing element.
+     * @return string An HTML element.
+     */
+    public static function element(string $tag, array $attr = [], $text = null) : ?string
+    {
+        if (empty($tag)) {
+            throw new Exception('Empty HTML tag name');
         }
 
         $elem = [
+            '%tag'  => $tag,
             '%text' => $text,
             '%attr' => static::attr($attr),
         ];
 
-        $html = '<a %attr>%text</a>';
+        if ($text === false) {
+            $html = '<%tag%attr />';
+        } else {
+            $html = '<%tag%attr>%text</%tag>';
+        }
 
         return strtr($html, $elem);
     }
@@ -483,14 +508,7 @@ class HTML
             'lang'     => static::locale($text),
         ];
 
-        $elem = [
-            '%text' => $text,
-            '%attr' => static::attr($attr),
-        ];
-
-        $html = '<time %attr>%text</time>';
-
-        return strtr($html, $elem);
+        return static::element('time', $attr, $text);
     }
 
     /**
@@ -545,7 +563,9 @@ class HTML
         foreach ($attrs as $attr => $val) {
             if ($val !== null) {
                 if (is_bool($val)) {
-                    $html .= ' ' . $attr;
+                    if ($val === true) {
+                        $html .= ' ' . $attr;
+                    }
                 } else {
                     $val   = htmlspecialchars($val, ENT_QUOTES);
                     $html .= sprintf(' %s="%s"', $attr, $val);
