@@ -21,9 +21,18 @@ if ($data === null) {
 
 $icon = require BASEPATH . '/src/icon.php';
 
-$linkFormatterCallback = function ($link) {
+$anchorFormatterCallback = function ($link) {
     $link->url = Value::create($link->url ?? null);
     return HTML::anchor($link->url, $link->text);
+};
+
+$linkFormatterCallback = function ($link) {
+    $attr = [
+        'href'  => Value::create($link->url ?? null),
+        'rel'   => 'me',
+        'title' => $link->text,
+    ];
+    return HTML::element('link', $attr, false);
 };
 
 $workRanges = [];
@@ -135,6 +144,13 @@ $workRanges = [];
         </style>
 
         <link rel="icon" type="image/svg+xml" href="favicon.php" />
+<?php
+
+        $onlineLinks = array_map($linkFormatterCallback, $data->social);
+
+        echo "\n\t\t" . implode("\n\t\t", $onlineLinks) . "\n";
+
+?>
     </head>
     <body>
         <header>
@@ -145,7 +161,7 @@ $workRanges = [];
 
                 <p><small><strong>Contact</strong><br><?php
 
-                    $contactLinks = array_map($linkFormatterCallback, $data->contact);
+                    $contactLinks = array_map($anchorFormatterCallback, $data->contact);
 
                     echo implode(' / ', $contactLinks);
 
@@ -153,7 +169,7 @@ $workRanges = [];
 
                 <p><small><strong>Online</strong><br><?php
 
-                    $onlineLinks = array_map($linkFormatterCallback, $data->social);
+                    $onlineLinks = array_map($anchorFormatterCallback, $data->social);
 
                     echo implode(' / ', $onlineLinks);
 
