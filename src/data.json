@@ -102,6 +102,39 @@
                     "icon": "🔥"
                 },
                 {
+                    "name": "ITI Inc.",
+                    "description": "A professional information technology firm, foremerly known as ProContact.",
+                    "periods": [ "2020-05/2020-07" ],
+                    "status": "ACTIVE",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": "ITI Inc.",
+                    "roles": [
+                        "Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Corporate Site",
+                            "Consultancy"
+                        ],
+                        "subjects": [
+                            "Security",
+                            "Technology"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://iti.ca/en",
+                                "@fr": "https://iti.ca/fr"
+                            },
+                            "text": "iti.ca"
+                        }
+                    ],
+                    "icon": "👨‍💻"
+                },
+                {
                     "name": {
                         "@en": "Maple From Quebec",
                         "@fr": "Érable du Québec"
@@ -347,6 +380,43 @@
                 },
                 {
                     "name": {
+                        "@fr": "Plaisirs Gastronomiques"
+                    },
+                    "description": "A family-owned food processing company based in Boisbriand, Québec.",
+                    "periods": [ "2015", "2019" ],
+                    "status": "ACTIVE",
+                    "stack": [
+                        "Charcoal",
+                        "Charcoal (Legacy)"
+                    ],
+                    "client": {
+                        "@fr": "Plaisirs Gastronomiques Inc."
+                    },
+                    "roles": [
+                        "Frontend Developer",
+                        "Backend Developer"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Corporate Site"
+                        ],
+                        "subjects": [
+                            "Food & Drink"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://plaisirsgastronomiques.com/en",
+                                "@fr": "https://plaisirsgastronomiques.com/fr"
+                            },
+                            "text": "plaisirsgastronomiques.com"
+                        }
+                    ],
+                    "icon": "🥘"
+                },
+                {
+                    "name": {
                         "@en": "Swimming Canada",
                         "@fr": "Natation Canada"
                     },
@@ -490,6 +560,94 @@
             },
             "projects": [
                 {
+                    "name": "Lou-Tec",
+                    "description": "A heavy machinery and equipment rental company based in Québec.",
+                    "periods": [ "2013" ],
+                    "status": "ACTIVE",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": {
+                        "@fr": "Groupe Lou-Tec"
+                    },
+                    "roles": [
+                        "Consultant",
+                        "Quality Assurance"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Corporate Site",
+                            "Product Catalogue"
+                        ],
+                        "subjects": [
+                            "Building & Construction",
+                            "Equipment & Machinery"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://www.loutec.com/en",
+                                "@fr": "https://www.loutec.com/fr"
+                            },
+                            "text": "loutec.com"
+                        },
+                        {
+                            "url": {
+                                "@fr": "http://motionindesign.com/project/lou-tec/"
+                            },
+                            "text": "Case Study"
+                        }
+                    ],
+                    "icon": "👷‍♂️"
+                },
+                {
+                    "name": {
+                        "@en": "McAuslan Brewing",
+                        "@fr": "Brasserie McAuslan"
+                    },
+                    "description": "A brewing company in Montréal, Québec.",
+                    "periods": [ "2013" ],
+                    "status": "ACTIVE",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": {
+                        "@en": "McAuslan Brewing",
+                        "@fr": "Brasserie McAuslan"
+                    },
+                    "roles": [
+                        "Supervisor",
+                        "Quality Assurance",
+                        "Support"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Product Catalogue",
+                            "Promotional"
+                        ],
+                        "subjects": [
+                            "Food & Drink"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@en": "https://mcauslan.com/en",
+                                "@fr": "https://mcauslan.com/fr"
+                            },
+                            "text": "mcauslan.com"
+                        },
+                        {
+                            "url": {
+                                "@fr": "http://motionindesign.com/project/mcauslan/"
+                            },
+                            "text": "Case Study"
+                        }
+                    ],
+                    "icon": "🍺"
+                },
+                {
                     "name": "Remstar Films",
                     "description": "A film and television production and distribution comapny based in Montréal, Québec.",
                     "periods": [ "2013" ],
@@ -580,6 +738,50 @@
                         }
                     ],
                     "icon": "🚤"
+                },
+                {
+                    "name": "Marie-Mai",
+                    "description": "The official website of Marie-Mai, a Canadian singer from Québec.",
+                    "periods": [ "2012" ],
+                    "status": "REPLACED",
+                    "stack": [
+                        "WordPress"
+                    ],
+                    "client": {
+                        "@fr": "Productions J"
+                    },
+                    "roles": [
+                        "Quality Assurance",
+                        "Support"
+                    ],
+                    "categories": {
+                        "types": [
+                            "Music Artist",
+                            "Promotional"
+                        ],
+                        "subjects": [
+                            "Music"
+                        ]
+                    },
+                    "links": [
+                        {
+                            "url": {
+                                "@fr": "http://www.mariemai.com/"
+                            },
+                            "text": "mariemai.com"
+                        },
+                        {
+                            "url": "https://web.archive.org/web/20121002044634/http://www.mariemai.com/",
+                            "text": "Snapshot"
+                        },
+                        {
+                            "url": {
+                                "@fr": "http://motionindesign.com/project/mariemai-pour-productionj/"
+                            },
+                            "text": "Case Study"
+                        }
+                    ],
+                    "icon": "👩‍🎤"
                 },
                 {
                     "name": "SYNERGX Technologies",
