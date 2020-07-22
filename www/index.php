@@ -186,7 +186,7 @@ $workRanges = [];
 
             foreach ($data->work as $epoch) {
                 if (!empty($epoch->projects)) {
-                    $workRanges[] = $epoch->period;
+                    array_push($workRanges, ...$epoch->periods);
                 }
 
                 if ($epoch->type === MC_WORK_TYPE_AVOCATION) {
@@ -199,7 +199,13 @@ $workRanges = [];
 ?>
                 <p>
                     <strong><?php echo HTML::anchor($epoch->url, $epoch->name); ?></strong>
-                    <br><?php echo HTML::time($epoch->period) . "\n"; ?>
+<?php
+                foreach ($epoch->periods as $period) {
+?>
+                    <br><?php echo HTML::time($period); ?>
+<?php
+                } // $period
+?>
                     <br><small><?php echo implode(', ', $epoch->roles); ?></small>
                 </p>
 <?php
@@ -271,7 +277,18 @@ $workRanges = [];
 
                             ?> —
                             <br><?php echo $project->description . "\n"; ?>
-                            <br><small><?php echo implode(', ', $project->roles); ?> (<?php echo HTML::time($project->period); ?>)</small>
+                            <br><small><?php
+                                echo implode(', ', $project->stack);
+
+                                if ($project->stack && $project->roles) {
+                                    echo '; ';
+                                }
+
+                                echo implode(', ', $project->roles);
+                            ?> (<?php
+                                $periods = array_map([ 'HTML', 'time' ], $project->periods);
+                                echo implode(', ', $periods);
+                            ?>)</small>
                         </p>
                     </li>
 <?php
