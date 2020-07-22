@@ -423,7 +423,7 @@ class HTML
      * @param  Value $text The text node of the element.
      * @return string An HTML anchor element.
      */
-    public static function anchor($href, $text = null)
+    public static function anchor($href, $text = null) : ?string
     {
         if (empty($href)) {
             return $text;
@@ -465,7 +465,7 @@ class HTML
      * @param  Value             $text The text node of the element.
      * @return string An HTML time element.
      */
-    public static function time($time, $text = null)
+    public static function time($time, $text = null) : ?string
     {
         if ($time instanceof DateRange) {
             if ($text === null) {
@@ -499,7 +499,7 @@ class HTML
      * @param  string $icon The icon value.
      * @return string An HTML span element.
      */
-    public static function icon($icon)
+    public static function icon($icon) : ?string
     {
         if (empty($icon)) {
             return null;
@@ -520,7 +520,7 @@ class HTML
      * @param  Value $value A value to resolve.
      * @return string|null A value that is not the current locale.
      */
-    protected static function locale($value)
+    protected static function locale($value) : ?string
     {
         if ($value instanceof Value) {
             $locale = $value->localeOf();
@@ -538,7 +538,7 @@ class HTML
      * @param  array $attrs Associative array of HTML attributes.
      * @return string A string of HTML attributes.
      */
-    protected static function attr(array $attrs)
+    protected static function attr(array $attrs) : ?string
     {
         $html = '';
 
