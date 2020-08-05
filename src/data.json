@@ -171,6 +171,10 @@
                                 "@en": "maplefromquebec.ca",
                                 "@fr": "erableduquebec.ca"
                             }
+                        },
+                        {
+                            "url": "https://locomotive.ca/en/projects/maple-from-quebec",
+                            "text": "Case Study"
                         }
                     ],
                     "icon": "🍁"
@@ -238,6 +242,10 @@
                                 "@en": "https://infiniinc.com/"
                             },
                             "text": "infiniinc.com"
+                        },
+                        {
+                            "url": "https://locomotive.ca/en/projects/infini",
+                            "text": "Case Study"
                         }
                     ],
                     "icon": "🏠"
@@ -374,6 +382,10 @@
                                 "@fr": "https://usports.ca/fr"
                             },
                             "text": "usports.ca"
+                        },
+                        {
+                            "url": "https://locomotive.ca/en/projects/u-sports-canada",
+                            "text": "Case Study"
                         }
                     ],
                     "icon": "🤾"
@@ -532,8 +544,8 @@
                     "links": [
                         {
                             "url": {
-                                "@en": "http://harwell.ca/en",
-                                "@fr": "http://harwell.ca/fr"
+                                "@en": "https://harwell.ca/en/1/Home",
+                                "@fr": "https://harwell.ca/fr/1/Accueil"
                             },
                             "text": "harwell.ca"
                         },
