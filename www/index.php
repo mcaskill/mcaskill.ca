@@ -200,11 +200,16 @@ $workRanges = [];
                 <p>
                     <strong><?php echo HTML::anchor($epoch->url, $epoch->name); ?></strong>
 <?php
-                foreach ($epoch->periods as $period) {
+
+                if (count($epoch->periods)) {
 ?>
-                    <br><?php echo HTML::time($period); ?>
-<?php
+                    <br><?php
+
+                    $periods = array_map([ 'HTML', 'time' ], $epoch->periods);
+                    echo implode(', ', $periods);
+
                 } // $period
+
 ?>
                     <br><small><?php echo implode(', ', $epoch->roles); ?></small>
                 </p>

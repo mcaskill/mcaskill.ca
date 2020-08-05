@@ -39,9 +39,9 @@
             "periods": [ "2008-01/.." ],
             "type": "AVOCATION",
             "roles": [
-                "Backend Developer",
+                "Designer",
                 "Frontend Developer",
-                "Designer"
+                "Backend Developer"
             ],
             "url": null,
             "projects": [
@@ -49,9 +49,10 @@
         },
         {
             "name": "Locomotive",
-            "periods": [ "2013-12/.." ],
+            "periods": [ "2009-03/2012-06", "2013-12/.." ],
             "type": "OCCUPATION",
             "roles": [
+                "Frontend Developer",
                 "Backend Developer"
             ],
             "url": {
@@ -563,9 +564,9 @@
             "periods": [ "2012-05/2013-11" ],
             "type": "OCCUPATION",
             "roles": [
-                "Project Manager",
+                "Frontend Developer",
                 "Backend Developer",
-                "Frontend Developer"
+                "Project Manager"
             ],
             "url": {
                 "@fr": "http://motionindesign.com/"
