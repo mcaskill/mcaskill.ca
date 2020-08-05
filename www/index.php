@@ -47,106 +47,11 @@ $workRanges = [];
         <meta name="description" content="Web developer working at Locomotive.">
 
         <style>
-            body {
-                margin-top: 1.5em;
-                margin-right: 0;
-                margin-bottom: 6em;
-                margin-left: 0;
-                color: #2C3235;
-                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-                font-weight: 300;
-                line-height: 1.5;
-            }
-            div {
-                max-width: 45rem;
-                margin-right: 1.5em;
-                margin-left: 3em;
-            }
-            body > header {
-                min-height: calc(100vh - 10em);
-                margin-bottom: 3.5em;
-            }
-            body > header h1 {
-                font-size: 1.5em;
-            }
-            body > header h1 [role="img"] {
-                display: inline-block;
-                margin-left: -2em;
-                width: 2em;
-                text-align: center;
-                vertical-align: middle;
-            }
-            body > header p:nth-last-child(2) {
-                opacity: 0.6;
-            }
-            body > header p:nth-last-child(1) {
-                opacity: 0.4;
-            }
-            h1, h2, h3, h4, h5, h6, strong {
-                font-weight: 500;
-            }
-            h1, h2 {
-                font-size: 1.25em;
-            }
-            h3, h4 {
-                font-size: 1.125em;
-            }
-            h5, h6 {
-                font-size: 1em;
-            }
-            h3 {
-                margin-top: 2em;
-                padding-bottom: 0.5em;
-                border-bottom: 1px solid rgba(22, 33, 33, 0.2);
-                border-image: linear-gradient(to right, rgba(22, 33, 33, 0.2) 50%, rgba(22, 33, 33, 0)) 100% 1;
-            }
-            hr {
-                max-width: 2rem;
-                margin-top: 2em;
-                margin-right: 0;
-                margin-bottom: 2em;
-                margin-left: 0;
-                border-style: solid;
-                border-top-width: 1px;
-                border-right-width: 0;
-                border-bottom-width: 0;
-                border-left-width: 0;
-                opacity: 0.6;
-            }
-            ul {
-                padding-left: 0;
-            }
-            li {
-                list-style: none;
-                margin-left: 2em;
-            }
-            li [role="img"] {
-                display: inline-block;
-                margin-left: -2em;
-                width: 2em;
-                vertical-align: middle;
-            }
-            table {
-                border-color: #DFDFDE;
-            }
-            a {
-                color: #00F;
-            }
-            a:visited {
-                color: #008;
-            }
-            /*
-            ul { padding-left: 0; }
-            li { list-style: none; margin-left: 1em }
-            */
-            @media screen and (prefers-color-scheme: dark) {
-                body {
-                    background-color: #16191B;
-                    color: #E2E6E8;
-                }
-                a { color: #FF0; }
-                a:visited { color: #990; }
-            }
+<?php
+
+            include 'style.css';
+
+?>
         </style>
 
         <link rel="icon" type="image/svg+xml" href="favicon.php" />
