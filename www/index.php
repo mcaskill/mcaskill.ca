@@ -19,7 +19,15 @@ if ($data === null) {
     throw new Error('JSON: '.json_last_error_msg(), json_last_error());
 }
 
-$icon = require BASEPATH . '/src/icon.php';
+$icon = (function () use ($data) {
+    $icons = $data->site->icons;
+    $count = count($icons);
+    $index = max(0, min(round(($count / 60) * (int) date('i')), $count));
+
+    return $icons[$index] ?? $icons[0];
+})();
+
+$favicon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" x="-.1em" font-size="90">' . $icon . '</text></svg>';
 
 $anchorFormatterCallback = function ($link) {
     $link->url = Value::create($link->url ?? null);
@@ -54,7 +62,7 @@ $workRanges = [];
 ?>
         </style>
 
-        <link rel="icon" type="image/svg+xml" href="favicon.php" />
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<?php echo htmlentities($favicon, ENT_QUOTES|ENT_HTML5); ?>" />
 <?php
 
         $onlineLinks = array_map($linkFormatterCallback, $data->social);
