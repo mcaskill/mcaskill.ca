@@ -53,6 +53,7 @@ $workRanges = [];
 
         <title>Chauncey McAskill</title>
         <meta name="description" content="Web developer working at Locomotive.">
+        <meta name="color-scheme" content="light dark">
 
         <style>
 <?php
