@@ -1,0 +1,9 @@
+# Directories
+/dist
+/node_modules/
+/vendor/
+
+# Files
+/.env
+/composer.lock
+/package-lock.json
