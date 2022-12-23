@@ -23,6 +23,8 @@ class Value
     {
         if (is_object($data) && (property_exists($data, '@en') || property_exists($data, '@fr'))) {
             $data = get_object_vars($data);
+        } elseif (is_array($data) && (array_key_exists('@en', $data) || array_key_exists('@fr', $data))) {
+            // do nothing
         } else {
             $data = [
                 '@en' => $data,
@@ -51,6 +53,16 @@ class Value
     }
 
     /**
+     * Retrieves a string representing the BCP 47 language tag of the value.
+     *
+     * @return string|null
+     */
+    public function localeOf()
+    {
+        return $this->locales ? substr($this->locales[0], 1) : null;
+    }
+
+    /**
      * Retrieves a string representing the value.
      *
      * This method is meant to be overridden by derived objects for locale-specific purposes.
@@ -72,16 +84,6 @@ class Value
         }
 
         return null;
-    }
-
-    /**
-     * Retrieves a string representing the BCP 47 language tag of the value.
-     *
-     * @return string|null
-     */
-    public function localeOf()
-    {
-        return $this->locales ? substr($this->locales[0], 1) : null;
     }
 
     /**
@@ -155,27 +157,27 @@ class DateRangeCollection
     }
 
     /**
-     * @return string
-     */
-    public function getUntil()
-    {
-        return end($this->ranges)->getUntil();
-    }
-
-    /**
      * @return DateRange
      */
     public function getRange()
     {
         return DateRange::create([ $this->getFrom(), $this->getUntil() ]);
     }
+
+    /**
+     * @return string
+     */
+    public function getUntil()
+    {
+        return end($this->ranges)->getUntil();
+    }
 }
 
 class DateRange
 {
-    const REGEX_DATE   = '/^(?<Y>\d{4})(?:-(?<m>\d{2})(?:-(?<d>\d{2}))?)?$/';
-    const OPEN_DATE    = '..';
-    const UNKNOWN_DATE = '.';
+    public const DATE_OPEN    = '..';
+    public const DATE_UNKNOWN = '.';
+    public const REGEX_DATE   = '/^(?<Y>\d{4})(?:-(?<m>\d{2})(?:-(?<d>\d{2}))?)?$/';
 
     /**
      * @var string
@@ -224,19 +226,21 @@ class DateRange
     }
 
     /**
-     * @return ?string
+     * @param  ?string $format
+     * @param  ?string $present
+     * @return string
      */
-    public function getFrom()
+    public function format($format = null, $present = null)
     {
-        return $this->from;
+        return static::formatRange($this->from, $this->until, $format, $present);
     }
 
     /**
      * @return ?string
      */
-    public function getUntil()
+    public function getFrom()
     {
-        return $this->until;
+        return $this->from;
     }
 
     /**
@@ -256,13 +260,11 @@ class DateRange
     }
 
     /**
-     * @param  ?string $format
-     * @param  ?string $present
-     * @return string
+     * @return ?string
      */
-    public function format($format = null, $present = null)
+    public function getUntil()
     {
-        return static::formatRange($this->from, $this->until, $format, $present);
+        return $this->until;
     }
 
     /**
@@ -312,23 +314,41 @@ class DateRange
     }
 
     /**
-     * @return string[]
+     * @param  mixed $range A date/time range.
+     * @return ?static
      */
-    public static function splitRange($time)
+    public static function create($range)
     {
-        return array_pad(explode('/', $time), 2, null);
-    }
+        if ($range instanceof self) {
+            return $range;
+        }
 
-    /**
-     * @return ?array
-     */
-    public static function splitDate($time)
-    {
-        if (preg_match(static::REGEX_DATE, $time, $parts)) {
-            return $parts;
+        if (is_string($range)) {
+            return new static($range);
+        }
+
+        if (is_array($range) && count($range) === 2) {
+            return new static(...$range);
         }
 
         return null;
+    }
+
+    /**
+     * @param  string $time A date/time value.
+     * @return ?DateTimeInterface
+     */
+    public static function createDateTime($time)
+    {
+        if ($time instanceof DateTimeInterface) {
+            return $time;
+        }
+
+        if ($time === static::DATE_OPEN) {
+            $time = 'now';
+        }
+
+        return new DateTimeImmutable($time);
     }
 
     /**
@@ -365,7 +385,7 @@ class DateRange
     {
         $time = static::formatDate($from, $format);
         if ($until) {
-            if ($until === static::OPEN_DATE) {
+            if ($until === static::DATE_OPEN) {
                 $time .= '–' . ($present ? date($present) : 'Ongoing');
             } else {
                 $time .= '–' . static::formatDate($until, $format);
@@ -376,41 +396,23 @@ class DateRange
     }
 
     /**
-     * @param  string $time A date/time value.
-     * @return ?DateTimeInterface
+     * @return ?array
      */
-    public static function createDateTime($time)
+    public static function splitDate($time)
     {
-        if ($time instanceof DateTimeInterface) {
-            return $time;
-        }
-
-        if ($time === static::OPEN_DATE) {
-            $time = 'now';
-        }
-
-        return new DateTimeImmutable($time);
-    }
-
-    /**
-     * @param  mixed $range A date/time range.
-     * @return ?static
-     */
-    public static function create($range)
-    {
-        if ($range instanceof self) {
-            return $range;
-        }
-
-        if (is_string($range)) {
-            return new static($range);
-        }
-
-        if (is_array($range) && count($range) === 2) {
-            return new static(...$range);
+        if (preg_match(static::REGEX_DATE, $time, $parts)) {
+            return $parts;
         }
 
         return null;
+    }
+
+    /**
+     * @return string[]
+     */
+    public static function splitRange($time)
+    {
+        return array_pad(explode('/', $time), 2, null);
     }
 }
 
@@ -484,6 +486,27 @@ class HTML
     }
 
     /**
+     * Render an HTML icon element.
+     *
+     * @param  string $icon The icon value.
+     * @return string An HTML span element.
+     */
+    public static function icon($icon) : ?string
+    {
+        if (empty($icon)) {
+            return null;
+        }
+
+        $elem = [
+            '%icon' => $icon,
+        ];
+
+        $html = '<span role="img" aria-hidden="true">%icon</span>';
+
+        return strtr($html, $elem);
+    }
+
+    /**
      * Render an HTML time element.
      *
      * @param  DateTimeInterface $time The date/time value.
@@ -512,45 +535,6 @@ class HTML
     }
 
     /**
-     * Render an HTML icon element.
-     *
-     * @param  string $icon The icon value.
-     * @return string An HTML span element.
-     */
-    public static function icon($icon) : ?string
-    {
-        if (empty($icon)) {
-            return null;
-        }
-
-        $elem = [
-            '%icon' => $icon,
-        ];
-
-        $html = '<span role="img" aria-hidden="true">%icon</span>';
-
-        return strtr($html, $elem);
-    }
-
-    /**
-     * Retrieves a string representing the BCP 47 language tag of the value.
-     *
-     * @param  Value $value A value to resolve.
-     * @return string|null A value that is not the current locale.
-     */
-    protected static function locale($value) : ?string
-    {
-        if ($value instanceof Value) {
-            $locale = $value->localeOf();
-            if ($locale !== 'en') {
-                return $locale;
-            }
-        }
-
-        return null;
-    }
-
-    /**
      * Render an associative array as a string of HTML attributes.
      *
      * @param  array $attrs Associative array of HTML attributes.
@@ -574,5 +558,23 @@ class HTML
         }
 
         return $html;
+    }
+
+    /**
+     * Retrieves a string representing the BCP 47 language tag of the value.
+     *
+     * @param  Value $value A value to resolve.
+     * @return string|null A value that is not the current locale.
+     */
+    protected static function locale($value) : ?string
+    {
+        if ($value instanceof Value) {
+            $locale = $value->localeOf();
+            if ($locale !== 'en') {
+                return $locale;
+            }
+        }
+
+        return null;
     }
 }
