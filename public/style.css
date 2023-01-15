@@ -32,7 +32,7 @@ body > header h1 {
     font-size: 1.5em;
 }
 
-body > header h1 [role="img"] {
+body > header h1 .c-icon {
     display: inline-block;
     margin-left: -2em;
     width: 2em;
@@ -94,7 +94,7 @@ li {
     margin-left: 2em;
 }
 
-li [role="img"] {
+li .c-icon {
     display: inline-block;
     margin-left: -2em;
     width: 2em;
@@ -129,10 +129,10 @@ li { list-style: none; margin-left: 1em }
     }
 
     a {
-        color: #FF0;
+        color: cyan;
     }
 
     a:visited {
-        color: #990;
+        color: #00B6DA;
     }
 }

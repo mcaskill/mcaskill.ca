@@ -501,7 +501,7 @@ class HTML
             '%icon' => $icon,
         ];
 
-        $html = '<span role="img" aria-hidden="true">%icon</span>';
+        $html = '<span class="c-icon" aria-hidden="true">%icon</span>';
 
         return strtr($html, $elem);
     }
