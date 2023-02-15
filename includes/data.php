@@ -115,6 +115,13 @@ return [
             'show'   => false,
             'url'    => 'https://profiles.wordpress.org/mcaskill/',
         ],
+        'gravatar' => [
+            'handle' => 'cmcaskill',
+            // 'icon'   => 'Ⓖ',
+            'label'  => 'Gravatar',
+            'show'   => false,
+            'url'    => 'https://gravatar.com/4ccef955dfce263cdb356a097d7c9eb2',
+        ],
         'letterboxd' => [
             'handle' => 'mcaskill',
             // 'icon'   => '🎬',
@@ -135,6 +142,13 @@ return [
             'label'  => 'Twitter',
             'show'   => true,
             'url'    => 'https://twitter.com/mcaskill',
+        ],
+        'discord' => [
+            'handle' => 'mcaskill#5526',
+            // 'icon'   => '💬',
+            'label'  => 'Discord',
+            'show'   => false,
+            'url'    => 'https://discord.com/users/5526',
         ],
         'kiva' => [
             'handle' => 'mcaskill',
