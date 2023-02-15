@@ -66,6 +66,10 @@ $workRanges = [];
 	</head>
 	<body>
 		<header>
+            <aside class="c-banner c-banner--inset">
+                Black Lives Matter <span role="img" aria-label="Black Fist">✊🏾</span>, Love is Love <span role="img" aria-label="Rainbow Flag">🏳️‍🌈</span>, No Person is Illegal <span role="img" aria-label="Orange Heart">🧡</span>.
+            </aside>
+
 			<div>
 
 				<h1><?php echo HTML::icon($icon); ?><?php echo $data['author']['name']; ?></h1>

@@ -136,3 +136,37 @@ li { list-style: none; margin-left: 1em }
 		color: #00B6DA;
 	}
 }
+
+.c-banner {
+	position: relative;
+	top: -1.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	color: #fff;
+	background-color: #000;
+}
+
+.c-banner--inset {
+	padding-right: 1.5em;
+	padding-left: 3em;
+}
+
+.c-banner div {
+	max-width: 45rem;
+}
+
+.c-banner .c-icon {
+	display: inline-block;
+	margin-left: -3em;
+	width: 3em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.c-banner a {
+	color: #FCE21B;
+}
+
+.c-banner a:visited {
+	color: #990;
+}
