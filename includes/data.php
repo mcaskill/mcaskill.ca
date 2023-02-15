@@ -34,7 +34,7 @@ return [
 		'handle'   => 'mcaskill',
 		'name'     => 'Chauncey McAskill',
 		'location' => 'Montréal, QC',
-		'role'     => 'Web Developer',
+		'role'     => 'Web Generalist',
 	],
 	'channels' => [
 		'email' => [
