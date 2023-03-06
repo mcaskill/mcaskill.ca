@@ -187,6 +187,40 @@ return [
 			'url' => NULL,
 			'projects' => [
 				[
+					'name' => 'mcaskill/composer-exclude-files',
+					'description' => 'A Composer plugin for excluding files required by packages using the <code>files</code> autoloading mechanism.',
+					'periods' => [
+						'2018/..',
+					],
+					'status' => MC_PROJECT_STATUS_ACTIVE,
+					'stack' => [
+						'PHP',
+					],
+					'roles' => [
+						'Backend Developer',
+					],
+					'categories' => [
+						'types' => [
+							'Open Source',
+						],
+						'subjects' => [
+							'Tool',
+							'Web Development',
+						],
+					],
+					'links' => [
+						[
+							'label' => 'GitHub',
+							'url'   => 'https://github.com/mcaskill/composer-plugin-exclude-files',
+						],
+						[
+							'label' => 'Packagist',
+							'url'   => 'https://packagist.org/packages/mcaskill/composer-exclude-files',
+						],
+					],
+					'icon' => '🧑‍💻',
+				],
+				[
 					'name' => 'mcaskill/js-html-build-attributes',
 					'description' => 'A JS library for generating a string of HTML attributes.',
 					'periods' => [
@@ -250,42 +284,8 @@ return [
 							'url'   => 'https://github.com/mcaskill/php-html-build-attributes',
 						],
 						[
-							'label' => 'NPM',
-							'url'   => 'https://packagist.org/packages/mcaskill/php-html-build-attributes',
-						],
-					],
-					'icon' => '🧑‍💻',
-				],
-				[
-					'name' => 'mcaskill/composer-exclude-files',
-					'description' => 'A Composer plugin for excluding files required by packages using the <code>files</code> autoloading mechanism.',
-					'periods' => [
-						'2018/..',
-					],
-					'status' => MC_PROJECT_STATUS_ACTIVE,
-					'stack' => [
-						'PHP',
-					],
-					'roles' => [
-						'Backend Developer',
-					],
-					'categories' => [
-						'types' => [
-							'Open Source',
-						],
-						'subjects' => [
-							'Tool',
-							'Web Development',
-						],
-					],
-					'links' => [
-						[
-							'label' => 'GitHub',
-							'url'   => 'https://github.com/mcaskill/composer-plugin-exclude-files',
-						],
-						[
 							'label' => 'Packagist',
-							'url'   => 'https://packagist.org/packages/mcaskill/composer-exclude-files',
+							'url'   => 'https://packagist.org/packages/mcaskill/php-html-build-attributes',
 						],
 					],
 					'icon' => '🧑‍💻',
@@ -391,7 +391,7 @@ return [
 					'name' => 'ITI Inc.',
 					'description' => 'A professional information technology firm, foremerly known as ProContact.',
 					'periods' => [
-						'2020-05/2020-07',
+						'2020-05/..',
 					],
 					'status' => MC_PROJECT_STATUS_ACTIVE,
 					'stack' => [
@@ -424,12 +424,12 @@ return [
 				],
 				[
 					'name' => [
-						'@en' => 'Maple From Quebec',
+						'@en' => 'Maple from Quebec',
 						'@fr' => 'Érable du Québec',
 					],
 					'description' => 'A marketing campaign to promote maple products.',
 					'periods' => [
-						'2018/2019',
+						'2018/..',
 					],
 					'status' => MC_PROJECT_STATUS_ACTIVE,
 					'stack' => [
@@ -711,8 +711,8 @@ return [
 					],
 					'status' => MC_PROJECT_STATUS_ACTIVE,
 					'stack' => [
-						'Charcoal',
-						'Charcoal (Legacy)',
+						'Charcoal Legacy (2019)',
+						'Charcoal (2015)',
 					],
 					'client' => [
 						'@fr' => 'Plaisirs Gastronomiques Inc.',
@@ -844,7 +844,7 @@ return [
 					],
 					'status' => MC_PROJECT_STATUS_ACTIVE,
 					'stack' => [
-						'Charcoal (Legacy)',
+						'Charcoal Legacy',
 					],
 					'client' => [
 						'@en' => 'Harwell Packaging Inc.',
@@ -912,7 +912,7 @@ return [
 						'@fr' => 'Groupe Lou-Tec',
 					],
 					'roles' => [
-						'Consultant',
+						'Supervisor',
 						'Quality Assurance',
 					],
 					'categories' => [
