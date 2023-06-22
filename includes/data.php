@@ -140,7 +140,7 @@ return [
 			'handle' => 'mcaskill',
 			// 'icon'   => '🐦',
 			'label'  => 'Twitter',
-			'show'   => true,
+			'show'   => false,
 			'url'    => 'https://twitter.com/mcaskill',
 		],
 		'discord' => [
