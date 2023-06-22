@@ -144,11 +144,11 @@ return [
 			'url'    => 'https://twitter.com/mcaskill',
 		],
 		'discord' => [
-			'handle' => 'mcaskill#5526',
+			'handle' => '_mcaskill',
 			// 'icon'   => '💬',
 			'label'  => 'Discord',
 			'show'   => false,
-			'url'    => 'https://discord.com/users/5526',
+			'url'    => 'https://discord.com/users/_mcaskill',
 		],
 		'kiva' => [
 			'handle' => 'mcaskill',
