@@ -66,9 +66,13 @@ $workRanges = [];
 	</head>
 	<body>
 		<header>
-            <aside class="c-banner c-banner--inset">
-                Black Lives Matter <span role="img" aria-label="Black Fist">✊🏾</span>, Love is Love <span role="img" aria-label="Rainbow Flag">🏳️‍🌈</span>, No Person is Illegal <span role="img" aria-label="Orange Heart">🧡</span>.
-            </aside>
+			<aside class="c-banner c-banner--inset">
+				End the Nakba <span role="img" aria-label="Flag of Palestine">🇵🇸</span>,
+				End the invasion <span role="img" aria-label="Flag of Ukraine">🇺🇦</span>,
+				Black Lives Matter <span role="img" aria-label="Black Fist">✊🏾</span>,
+				Love is love <span role="img" aria-label="Rainbow Flag">🏳️‍🌈</span>,
+				No person is illegal <span role="img" aria-label="Orange Heart">🧡</span>.
+			</aside>
 
 			<div>
 
