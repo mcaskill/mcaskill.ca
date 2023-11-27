@@ -173,11 +173,16 @@ class DateRangeCollection
 	}
 }
 
+/**
+ * Date/Time Interval
+ *
+ * {@link https://en.wikipedia.org/wiki/ISO_8601#Time_intervals ISO 8601 Time Intervals}
+ */
 class DateRange
 {
 	public const DATE_OPEN    = '..';
 	public const DATE_UNKNOWN = '.';
-	public const REGEX_DATE   = '/^(?<Y>\d{4})(?:-(?<m>\d{2})(?:-(?<d>\d{2}))?)?$/';
+	public const REGEXP_DATE  = '/^(?<Y>\d{4})(?:-(?<m>\d{2})(?:-(?<d>\d{2}))?)?$/';
 
 	/**
 	 * @var string
@@ -400,7 +405,7 @@ class DateRange
 	 */
 	public static function splitDate($time)
 	{
-		if (preg_match(static::REGEX_DATE, $time, $parts)) {
+		if (preg_match(static::REGEXP_DATE, $time, $parts)) {
 			return $parts;
 		}
 
