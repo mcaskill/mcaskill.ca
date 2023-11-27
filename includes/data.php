@@ -388,6 +388,80 @@ return [
 					'icon' => '🔥',
 				],
 				[
+					'name' => [
+						'@en' => 'The Mistreatment Helpline',
+						'@fr' => 'Ligne Aide Maltraitance Adultes et Aînés',
+					],
+					'description' => 'A provincial telephone line for listening, reference, and support specializing in the mistreatment of older adults in vulnerable situations.',
+					'periods' => [
+						'2023-08/..',
+					],
+					'status' => MC_PROJECT_STATUS_ACTIVE,
+					'stack' => [
+						'Charcoal',
+					],
+					'client' => [
+						'@en' => 'The Mistreatment Helpline',
+						'@fr' => 'Ligne Aide Maltraitance Adultes et Aînés',
+					],
+					'roles' => [
+						'Backend Developer',
+					],
+					'categories' => [
+						'types' => [
+							'Government Site',
+						],
+						'subjects' => [
+							'Counselling',
+							'Mistreatment',
+						],
+					],
+					'links' => [
+						[
+							'label' => 'lignemaltraitance.ca',
+							'url'   => [
+								'@en' => 'https://lignemaltraitance.ca/en',
+								'@fr' => 'https://lignemaltraitance.ca/fr',
+							],
+						],
+					],
+					'icon' => '🧓',
+				],
+				[
+					'name' => 'Canadian Internet Registration Authority',
+					'description' => 'The organization that manages the <code>.ca</code> country code top-level domain for Canada.',
+					'periods' => [
+						'2022-08/2023-08',
+					],
+					'status' => MC_PROJECT_STATUS_ACTIVE,
+					'stack' => [
+						'WordPress',
+					],
+					'client' => 'Canadian Internet Registration Authority',
+					'roles' => [
+						'Backend Developer',
+					],
+					'categories' => [
+						'types' => [
+							'Corporate Site',
+						],
+						'subjects' => [
+							'Registrar',
+							'Technology',
+						],
+					],
+					'links' => [
+						[
+							'label' => 'cira.ca',
+							'url'   => [
+								'@en' => 'https://cira.ca/en',
+								'@fr' => 'https://cira.ca/fr',
+							],
+						],
+					],
+					'icon' => '🇨🇦',
+				],
+				[
 					'name' => 'ITI Inc.',
 					'description' => 'A professional information technology firm, foremerly known as ProContact.',
 					'periods' => [
@@ -794,7 +868,7 @@ return [
 					'name' => [
 						'@fr' => 'Union des Producteurs Agricoles',
 					],
-					'description' => 'An agricultural trade union representing producers in the province Québec.',
+					'description' => 'The agricultural trade union representing producers in the province Québec.',
 					'periods' => [
 						'2014/2015',
 					],
