@@ -55,14 +55,7 @@ $workRanges = [];
 ?>
 
 		<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<?php echo htmlentities($favicon, ENT_QUOTES|ENT_HTML5); ?>" />
-
-		<style>
-<?php
-
-			include 'style.css';
-
-?>
-		</style>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<header>
